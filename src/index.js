@@ -1,15 +1,10 @@
-// import express
 // import { Express } from "express"; //ES6 module Syntak
 // "type": "module" // di packeage.json atas script
-const Express = require("express");
-
+const Express = require("express"); // import express
+const Router = require("./routes/router"); // import router
 // init express
 const app = Express();
-
-//basic routes
-app.get("/", (req, res, next) => {
-  res.send("Hello World");
-});
+app.use(Router);
 
 //listen on port
 app.listen(3000, () => {
