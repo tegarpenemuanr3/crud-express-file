@@ -1,8 +1,8 @@
 // import express
-import express from "express";
+const express = require("express");
 
 // import page controller
-import { Home, About, Contact } from "../controllers/pages.js";
+const { Home, About, Contact } = require("../controllers/pages.js");
 
 // init express router
 const router = express.Router();
@@ -17,4 +17,4 @@ router.get("/about", About);
 router.get("/contact", Contact);
 
 // export default router
-export default router;
+module.exports = router;

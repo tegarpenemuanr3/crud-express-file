@@ -1,11 +1,16 @@
 //import express
-import express from "express";
+const express = require("express");
 
 // import router
-import router from "./routes/router.js";
+const router = require("./routes/router.js");
 
 // init express
 const app = express();
+
+// * Swagger
+const swaggerUi = require("swagger-ui-express");
+const apiDocumentation = require("../src/swagger/apidocs.json");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(apiDocumentation));
 
 // Use Router
 app.use(router);
