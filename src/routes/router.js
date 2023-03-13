@@ -1,24 +1,20 @@
 // import express
-const express = require("express");
+import express from "express";
+
+// import page controller
+import { Home, About, Contact } from "../controllers/pages.js";
 
 // init express router
 const router = express.Router();
 
 // Home route
-router.get("/", (req, res) => {
-  res.send("Welcome to Home Page");
-});
+router.get("/", Home);
 
 // About route
-router.get("/about", (req, res) => {
-  res.send("Welcome to About Page");
-});
+router.get("/about", About);
 
 // Contact route
-router.get("/contact", (req, res) => {
-  res.send("Welcome to Contact Page");
-});
+router.get("/contact", Contact);
 
 // export default router
-// export default router; //opsi 2
-module.exports = router;
+export default router;
